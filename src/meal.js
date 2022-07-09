@@ -22,14 +22,27 @@ ingredients[ingredients.length] = ingredientName;
 return ingredients;
 };
 
-function formatPrice (name, type, price) {
-  var menuItem = {
-    name,
-    price,
-    type,
+function formatPrice (price) {
+return ('$' + price);
 };
-return ("$" + menuItem.price);
+
+function decreasePrice (price) {
+var newPrice = price - (.1 * price);
+return newPrice;
 };
+
+function createRecipe (title, ingredients, type) {
+var recipe = {
+  title,
+  ingredients,
+  type
+};
+recipe.title = title;
+recipe.ingredients = ingredients;
+recipe.type = type;
+return recipe;
+}
+
 
 
 
@@ -39,6 +52,6 @@ module.exports = {
   createMenuItem,
   addIngredients,
   formatPrice,
-  // decreasePrice,
-  // createRecipe
+  decreasePrice,
+  createRecipe
 }
